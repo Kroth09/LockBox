@@ -48,7 +48,7 @@ class Validacao
             return;
         }
 
-        $DB = new Core\Database(config('database'));
+        $DB = new Database(config('database'));
 
         $resultado = $DB->query(
         query: "select * from usuarios where $campo = :valor",

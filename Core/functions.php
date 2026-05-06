@@ -1,18 +1,21 @@
 <?php
 
 
-function base_path($path){
+function base_path($path)
+{
     return __DIR__ . '/../' . $path;
 }
 
-function view($view, $data = []){
+function view($view, $data = [], $template = 'app')
+{
     foreach ($data as $key => $value) {
         $$key = $value;
     }
-    require base_path("views/templates/app.php");
+    require base_path("views/templates/$template.php");
 }
 
-function dump($value) {
+function dump($value)
+{
     echo '<pre style="background:#111; color:#0f0; padding:10px;">';
     print_r($value);
     echo '</pre>';
@@ -26,18 +29,21 @@ function dd (...$dump)
     die();
 }
 
-function abort($code){
+function abort($code)
+{
     http_response_code($code);
     view($code);
     die();
 }
 
-function flash(){
+function flash()
+{
     return new Core\Flash;
 }
 
-function config($chave = null){
-    $config = require base_path('config.php');
+function config($chave = null)
+{
+    $config = require base_path('/Config/config.php');
 
     if(strlen($chave) > 0){
         return $config[$chave];
@@ -47,15 +53,13 @@ function config($chave = null){
 }
 
 
-function auth(){
+function auth()
+{
     if(! isset($_SESSION['auth'])){
         return null;
     }
 
     return $_SESSION['auth'];
-    header('location> /');
-    exit();
-
 }
 
 function old($campo)
@@ -66,6 +70,12 @@ function old($campo)
         return $post[$campo];
     }
     return '';
+}
+
+function redirect($uri)
+{
+    header('Location: ' . $uri);
+    exit();
 }
 
 

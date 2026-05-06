@@ -24,16 +24,15 @@ $validacoes = flash()->get('validacoes');
                     <div class="card-body">
                         <div class="card-title">Faça o seu login</div>
 
-                        <?php if($mensagem = flash()->get('mensagem')): ?>
-
-                            <div role="alert" class="alert alert-warning">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                </svg>
-                                <span><?= $mensagem ?></span>
-                            </div>
-
-                        <?php endif; ?>
+<!--                        --><?php //if($mensagem = flash()->get('mensagem')): ?>
+<!---->
+<!--                            <div role="alert" class="alert">-->
+<!--                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">-->
+<!--                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>-->
+<!--                                </svg>-->
+<!--                                <span>--><?php //=$mensagem?><!--</span>-->
+<!--                            </div>-->
+<!--                        --><?php //endif; ?>
 
                         <label class="form-control">
                             <div class="label">
@@ -55,11 +54,14 @@ $validacoes = flash()->get('validacoes');
                                     <div class="label text-xs text-error"><?= $validacoes['senha'][0] ?></div>
                                 <?php endif; ?>
                             </div>
-                            <input type="password" name="senha" class="input input-bordered border-2 border-gray-400 focus:border-blue-500 focus:outline-none w-full max-w-xs bg-white" />
+                            <div>
+                            <input type="password" name="senha"
+                                   class="input input-bordered border-2 border-gray-400 focus:border-blue-500 focus:outline-none w-full max-w-xs bg-white" />
+                            </div>
                         </label>
 
                         <div class="card-actions">
-                            <button class="btn btn-primary btn-block">Login</button>
+                            <button class="btn btn-primary w-full max-w-xs">Login</button>
                             <a href="/registrar" class="btn btn-link">Quero me registrar</a>
                         </div>
                     </div>

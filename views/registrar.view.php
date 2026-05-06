@@ -69,7 +69,7 @@ $validacoes = flash()->get('validacoes')
 
 
                         <div class="card-actions">
-                            <button class="btn btn-primary btn-block">Registrar</button>
+                            <button class="btn btn-primary w-full max-w-xs">Registrar</button>
                             <a href="/login" class="btn btn-link">Já tenho uma conta</a>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 <?php
 require '../Core/functions.php';
 
+define('ROOT_PATH', dirname(__DIR__));
 
 spl_autoload_register(function ($class) {
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
@@ -12,4 +13,5 @@ spl_autoload_register(function ($class) {
 session_start();
 
 
-require '../routes.php';
+$config = require base_path('Config/config.php');
+require base_path('Config/routes.php');
