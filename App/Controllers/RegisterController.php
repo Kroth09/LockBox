@@ -39,6 +39,6 @@ class RegisterController
 
 
         flash()->push('mensagem', 'Registrado com sucesso!');
-        return view('login');
+        redirect('login');
     }
 }

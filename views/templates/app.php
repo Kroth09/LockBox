@@ -22,7 +22,7 @@
 
     <?php require base_path('views/partials/_pesquisar.php'); ?>
 
-
+    <?php require base_path('views/partials/_mensagem.php'); ?>
 
     <div class="flex flex-grow pb-6">
         <?php require base_path("views/{$view}.view.php"); ?>
