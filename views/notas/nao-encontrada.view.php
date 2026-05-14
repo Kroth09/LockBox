@@ -1,0 +1,8 @@
+<div class="bg-base-300 rounded-l-box w-full text-center text-3xl font-bold pt-20 ">
+
+    Nenhuma nota encontrada.
+    <br>
+    <br>
+    <a href="/notas" class="link link-primary text-xl">Limpar filtro</a>
+
+</div>

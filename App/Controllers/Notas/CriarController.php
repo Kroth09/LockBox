@@ -35,6 +35,7 @@ class CriarController
                 'data_atualizacao' => date('Y-m-d H:i:s'),
             ]);
 
+        flash()->push('mensagem', 'Nota criada com sucesso!');
         return view('notas');
     }
 }

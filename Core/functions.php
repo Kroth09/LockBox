@@ -78,5 +78,8 @@ function redirect($uri)
     exit();
 }
 
-
+function request()
+{
+    return new Core\Request();
+}
 

@@ -4,8 +4,8 @@ require '../Core/functions.php';
 define('ROOT_PATH', dirname(__DIR__));
 
 spl_autoload_register(function ($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    require base_path("{$class}.php");
+    $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
+    require ROOT_PATH . DIRECTORY_SEPARATOR . $file;
 
 });
 
